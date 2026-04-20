@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recipe Haven - A complete vanilla recipe website powered by TheMealDB API">
+    <title>Recipe Haven • Discover Delicious Recipes</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#" onclick="switchToHome(); return false;" class="logo">
+                Recipe Haven
+            </a>
+
+
+            <div class="search-container">
+                <span class="search-icon">🔎</span>
+                <input type="text" id="search-input" class="search-input"
+                    placeholder="Search recipes... (e.g. pasta, chicken, sushi)" autocomplete="off">
+            </div>
+
+
+            <div class="nav-links">
+                <button onclick="switchToHome()" id="nav-home" class="nav-btn active">
+                    🏠 Home
+                </button>
+                <button onclick="showFavorites()" id="nav-favorites" class="nav-btn">
+                    ❤️ Favorites
+                </button>
+
+
+                <button onclick="toggleDarkMode()" id="theme-toggle" class="theme-toggle" title="Toggle dark mode">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find your next<br>favorite recipe</h1>
+            <p>Thousands of delicious meals from around the world.<br>Powered by TheMealDB</p>
+
+            <div class="heroy">
+                <div class="heroe">
+                    <span class="hero-span">NEW</span>
+                    Real-time search
+                </div>
+                <div>🍳 Category filters</div>
+                <div>❤️ Save your favorites</div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="filters">
+        <div class="filter-title">
+            <span>Browse by category</span>
+            <span class="filter-span"></span>
+        </div>
+        <div id="category-list" class="category-list">
+
+        </div>
+    </div>
+
+
+    <div class="section-header">
+        <h2 id="section-title">Featured Recipes</h2>
+        <div id="results-info">
+            <span id="result-count"></span>
+            <button onclick="clearSearch()" class="content-btn">Clear search</button>
+        </div>
+    </div>
+
+
+    <div id="recipes-grid" class="recipes-grid">
+
+    </div>
+
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <img id="modal-image" src="" alt="">
+                <button onclick="hideModal()" class="modal-close">✕</button>
+
+
+                <button onclick="toggleFavoriteFromModal()" id="modal-heart-btn">
+                    ❤️
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <h1 id="modal-title" class="modal-title"></h1>
+
+
+                <div id="modal-meta" class="modal-meta">
+
+                </div>
+
+
+                <div class="ingredients">
+                    <div class="section-label">
+                        🛒 Ingredients
+                    </div>
+                    <ul id="modal-ingredients">
+
+                    </ul>
+                </div>
+
+
+                <div class="instructions">
+                    <div class="section-label">
+                        👨‍🍳 Step-by-step instructions
+                    </div>
+                    <ol id="modal-instructions">
+
+                    </ol>
+                </div>
+
+
+                <button onclick="hideModal()" class="back-button">
+                    ← Back to recipes
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-content">
+        <p>Made with ❤️ • Data from
+            <a href="https://www.themealdb.com" target="_blank">TheMealDB API</a>
+        </p>
+        <p>Fully responsive • Dark mode • Favorites with localStorage • Real-time search</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
